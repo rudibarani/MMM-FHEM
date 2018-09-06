@@ -65,7 +65,7 @@ module.exports = NodeHelper.create({
       var FHEMvalue = device.Readings[readingName].Value;
 
       if (FHEMvalue) {
-        FHEMvalue.toFixed(0);
+//        FHEMvalue.toFixed(0);
         values.push(FHEMvalue);
       } else {
         values.push('Reading not exist');
