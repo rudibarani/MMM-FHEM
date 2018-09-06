@@ -62,14 +62,19 @@ module.exports = NodeHelper.create({
 
     readingsName.forEach(function(element, index, array) {
       var readingName = element;
-      if (device.Readings[readingName].match("temperature")) {
-        values.push(device.Readings[readingName].Value.toFixed(1));
-      } else if (device.Readings[readingName].match("humidity")) {
-        values.push(device.Readings[readingName].Value.toFixed(0));
-      } else if (device.Readings[readingName].match("dewpoint")) { 
-        values.push(device.Readings[readingName].Value.toFixed(1));
-      } else if (device.Readings[readingName]) {
-        values.push(device.Readings[readingName].Value);
+      var FHEMvalue = device.Readings[readingName].Value;
+      
+      if (FHEMvalue.match("temperature")) {
+        FHEMvalue.toFixed(1);
+        values.push(FHEMvalue);
+      } else if (FHEMvalue.match("humidity")) {
+        FHEMvalue.toFixed(0);
+        values.push(FHEMvalue);
+      } else if (FHEMvalue.match("dewpoint")) { 
+        FHEMvalue.toFixed(1);
+        values.push(FHEMvalue);
+      } else if (FHEMvalue) {
+        values.push(FHEMvalue.Value);
       } else {
         values.push('Reading not exist');
       }
