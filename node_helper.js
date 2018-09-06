@@ -63,10 +63,9 @@ module.exports = NodeHelper.create({
     readingsName.forEach(function(element, index, array) {
       var readingName = element;
 //      var FHEMvalue = parseFloat(device.Readings[readingName].Value);
-      var FHEMvalue = device.Readings[readingName].Value;
+      var FHEMvalue = parseFloat(device.Readings[readingName].Value).toFixed(0);
 
       if (FHEMvalue) {
-        FHEMvalue = FHEMvalue.toFixed(0);
         values.push(FHEMvalue);
       } else {
         values.push('??');
