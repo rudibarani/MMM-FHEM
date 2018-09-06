@@ -48,7 +48,9 @@ module.exports = NodeHelper.create({
    * @return {string}
    */
   getDeviceName: function (device) {
-    if (device.Attributes.alias) {
+    if (device.Attributes.MMalias) {
+      return device.Attributes.MMalias;
+    } else if (device.Attributes.alias) {
       return device.Attributes.alias;
     } else {
       return device.Name;
