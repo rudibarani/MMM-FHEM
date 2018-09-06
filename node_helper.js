@@ -62,10 +62,10 @@ module.exports = NodeHelper.create({
 
     readingsName.forEach(function(element, index, array) {
       var readingName = element;
-      var FHEMvalue = device.Readings[readingName].Value;
+      var FHEMvalue = parseFloat(device.Readings[readingName].Value);
 
       if (FHEMvalue) {
-//        FHEMvalue.toFixed(0);
+        FHEMvalue.toFixed(0);
         values.push(FHEMvalue);
       } else {
         values.push('Reading not exist');
