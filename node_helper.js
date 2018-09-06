@@ -64,13 +64,13 @@ module.exports = NodeHelper.create({
       var readingName = element;
       var FHEMvalue = device.Readings[readingName].Value;
       
-      if (FHEMvalue.match("temperature")) {
+      if (device.Readings[readingName].match("temperature")) {
         FHEMvalue.toFixed(1);
         values.push(FHEMvalue);
-      } else if (FHEMvalue.match("humidity")) {
+      } else if (device.Readings[readingName].match("humidity")) {
         FHEMvalue.toFixed(0);
         values.push(FHEMvalue);
-      } else if (FHEMvalue.match("dewpoint")) { 
+      } else if (device.Readings[readingName].match("dewpoint")) { 
         FHEMvalue.toFixed(1);
         values.push(FHEMvalue);
       } else if (FHEMvalue) {
