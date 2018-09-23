@@ -30,7 +30,7 @@ Module.register('MMM-FHEM', {
     if (notification === 'DATARECEIVED') {
       this.devices = payload;
       // Log.log(payload);
-      this.updateDom();
+      this.updateDom(0);
       this.scheduleUpdate(this.config.updateInterval);
     }
   },
